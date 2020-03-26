@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  author: Jeremie CUADRADO
+  role_name: diagtools
+  description: Ansible role install some diagnostics packages.
+  license: GPLv3
+  company: REDBEARD-CONSULTING
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: Debian
+      versions:
+        - all
+    - name: CentOS
+      versions:
+        - all
+    - name: RedHat
+      versions:
+        - all
+
+  galaxy_tags:
+    - server
+    - system
+    - web
+    - cloud
+
+  dependencies:
+    - src: redbeard28.bootstrap
+    - src: redbeard28.basetools

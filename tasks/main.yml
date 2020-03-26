@@ -1,0 +1,8 @@
+---
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Ensure diagnostics packages are installed"
+  package:
+    name: "{{ diagtools_packages }}"
+    state: present
+  register: diagtools_install_diagtools
+  until: diagtools_install_diagtools is succeeded
+  retries: 3

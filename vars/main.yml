@@ -1,0 +1,24 @@
+---
+# vars file for buildroot
+_diagtools_packages:
+  default:
+    - dnsutils
+    - net-tools
+  Alpine:
+    - net-tools
+    - dnsutils
+  Debian:
+    - net-tools
+    - dnsutils
+  CentOS-7:
+    - net-tools
+    - dnsutils
+  CentOS:
+    - net-tools
+    - dnsutils
+  RedHat:
+    - net-tools
+    - dnsutils
+
+
+diagtools_packages: "{{ _diagtools_packages[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_diagtools_packages[ansible_distribution] | default(_diagtools_packages[ansible_os_family] | default (_diagtools_packages['default']))) }}"
